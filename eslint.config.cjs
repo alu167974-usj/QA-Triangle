@@ -16,12 +16,13 @@ module.exports = [
         ...globals.browser,
         ...globals.node,
         ...globals.mocha,
+        ...globals.jest,
         chai: 'readonly'
       }
     },
     rules: {
       'no-undef': 'error',
-      'no-unused-vars': 'warn',
+      'no-unused-vars': 'off',
       'semi': ['error', 'always']
     }
   }
