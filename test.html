@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Number Converter Tests</title>
+  <!-- Mocha CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mocha/10.2.0/mocha.min.css" />
+</head>
+<body>
+  <!-- Minimal DOM so script.js can load (same ids as index.html); hidden from view -->
+  <div style="display:none" aria-hidden="true">
+    <select id="conversionMode"><option value="intToRoman">Integer to Roman</option><option value="romanToInt">Roman to Integer</option></select>
+    <input id="inputValue" type="text" />
+    <button id="convertButton" type="button">Convert</button>
+    <div id="result"></div>
+    <div id="error"></div>
+  </div>
+  <!-- Container where Mocha will display the test results -->
+  <div id="mocha"></div>
+
+  <!-- Load Mocha and Chai libraries -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mocha/10.2.0/mocha.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/chai/4.3.7/chai.min.js"></script>
+  
+  <!-- Set up Mocha in BDD mode -->
+  <script>
+    mocha.setup('bdd');
+  </script>
+  
+  <!-- Load your website library (conversion functions) -->
+  <script src="script.js"></script>
+  
+  <!-- Load the test implementations -->
+  <script src="tests.js"></script>
+  
+  <!-- Run the tests -->
+  <script>
+    mocha.run();
+  </script>
+</body>
+</html>
