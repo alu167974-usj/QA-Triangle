@@ -106,6 +106,13 @@ function handleConversion() {
   resultDiv.textContent = '';
   errorDiv.textContent = '';
 
+  if (typeof gtag === 'function') {
+    gtag('event', 'convert_clicked', {
+      event_category: 'roman_converter',
+      event_label: mode
+    });
+  }
+
   try {
     if (mode === 'intToRoman') {
       const num = parseInt(input, 10);
@@ -122,6 +129,13 @@ function handleConversion() {
     }
   } catch (error) {
     errorDiv.textContent = error.message;
+
+    if (typeof gtag === 'function') {
+      gtag('event', 'invalid_input', {
+        event_category: 'roman_converter',
+        event_label: error.message
+      });
+    }
   }
 }
 
